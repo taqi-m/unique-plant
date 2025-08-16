@@ -1,7 +1,7 @@
 package com.app.uniqueplant.presentation.admin.person
 
-import com.app.uniqueplant.data.model.Person
-import com.app.uniqueplant.data.model.PersonTypes
+import com.app.uniqueplant.data.datasource.local.entities.Person
+import com.app.uniqueplant.data.datasource.local.entities.PersonTypes
 import com.app.uniqueplant.presentation.admin.categories.UiState
 
 data class PersonDialogState(

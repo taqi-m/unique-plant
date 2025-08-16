@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.app.uniqueplant.data.model.Person
+import com.app.uniqueplant.data.datasource.local.entities.Person
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -13,20 +13,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(
-    private val loadDefaultsUseCase: LoadDefaultsUseCase
-) : ViewModel() {
+class DashboardViewModel @Inject constructor() : ViewModel() {
 
     private val _state = MutableStateFlow(DashboardScreenState())
     val state: StateFlow<DashboardScreenState> = _state.asStateFlow()
-
-    init {
-        viewModelScope.launch(Dispatchers.IO) {
-            launch {
-                loadDefaultsUseCase.addDefaultCategories()
-            }.join()
-        }
-    }
 
 
     fun onEvent(event: DashboardEvent) {

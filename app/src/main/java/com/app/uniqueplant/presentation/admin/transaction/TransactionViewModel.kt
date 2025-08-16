@@ -16,8 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TransactionViewModel @Inject constructor(
-    private val loadTransactionsUseCase: LoadTransactionsUseCase,
-    private val loadDefaultsUseCase: LoadDefaultsUseCase,
+    private val loadTransactionsUseCase: LoadTransactionsUseCase
 ) : ViewModel() {
 
     private val _transactions = MutableStateFlow<List<Transaction>>(emptyList())
@@ -36,14 +35,6 @@ class TransactionViewModel @Inject constructor(
     val state: StateFlow<TransactionState> = _state.asStateFlow()
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                loadDefaultsUseCase.addDefaultCategories()
-            } catch (e: Exception) {
-                Log.e("TransactionViewModel", "Error loading defaults: ${e.message}")
-            }
-        }
-
         // Collect all transactions
         viewModelScope.launch(Dispatchers.IO) {
             try {

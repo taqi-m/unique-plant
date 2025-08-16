@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.app.uniqueplant.data.model.User
+import com.app.uniqueplant.data.datasource.local.entities.User
 import kotlinx.coroutines.flow.Flow
 import java.util.Date
 

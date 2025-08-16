@@ -1,10 +1,10 @@
-package com.app.uniqueplant.data.model
+package com.app.uniqueplant.data.datasource.local.entities
 
 import androidx.room.Embedded
 import androidx.room.Relation
 
-data class ExpenseWithCategory(
-    @Embedded val expense: Expense,
+data class IncomeWithCategory(
+    @Embedded val income: Income,
     @Relation(
         parentColumn = "categoryId",
         entityColumn = "categoryId"

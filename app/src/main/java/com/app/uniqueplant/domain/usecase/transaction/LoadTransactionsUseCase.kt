@@ -1,7 +1,7 @@
 package com.app.uniqueplant.domain.usecase.transaction
 
-import com.app.uniqueplant.data.model.Expense
-import com.app.uniqueplant.data.model.Income
+import com.app.uniqueplant.data.datasource.local.entities.Expense
+import com.app.uniqueplant.data.datasource.local.entities.Income
 import com.app.uniqueplant.domain.mapper.TransactionMapper
 import com.app.uniqueplant.domain.model.Transaction
 import com.app.uniqueplant.domain.repository.ExpenseRepository

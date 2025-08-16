@@ -8,8 +8,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import com.app.uniqueplant.data.model.Income
-import com.app.uniqueplant.data.model.IncomeWithCategory
+import com.app.uniqueplant.data.datasource.local.entities.Income
+import com.app.uniqueplant.data.datasource.local.entities.IncomeWithCategory
 import kotlinx.coroutines.flow.Flow
 import java.util.Date
 

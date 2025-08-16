@@ -1,6 +1,6 @@
 package com.app.uniqueplant.presentation.admin.person
 
-import com.app.uniqueplant.data.model.Person
+import com.app.uniqueplant.data.datasource.local.entities.Person
 
 sealed class PersonDialogToggle {
     object Add : PersonDialogToggle()

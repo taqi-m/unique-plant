@@ -1,4 +1,4 @@
-package com.app.uniqueplant.data.model
+package com.app.uniqueplant.data.datasource.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

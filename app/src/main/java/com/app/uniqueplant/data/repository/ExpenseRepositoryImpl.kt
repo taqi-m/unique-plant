@@ -1,7 +1,7 @@
 package com.app.uniqueplant.data.repository
 
 import com.app.uniqueplant.data.datasource.local.dao.ExpenseDao
-import com.app.uniqueplant.data.model.Expense
+import com.app.uniqueplant.data.datasource.local.entities.Expense
 import com.app.uniqueplant.domain.repository.ExpenseRepository
 import kotlinx.coroutines.flow.Flow
 import java.util.Calendar

@@ -1,8 +1,6 @@
-package com.app.uniqueplant.data.model
+package com.app.uniqueplant.data.datasource.local.entities
 
 import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(

@@ -1,6 +1,6 @@
 package com.app.uniqueplant.domain.repository
 
-import com.app.uniqueplant.data.model.Expense
+import com.app.uniqueplant.data.datasource.local.entities.Expense
 import kotlinx.coroutines.flow.Flow
 
 interface ExpenseRepository {

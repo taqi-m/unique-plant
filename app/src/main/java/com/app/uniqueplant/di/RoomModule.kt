@@ -3,10 +3,15 @@ package com.app.uniqueplant.di
 import android.content.Context
 import androidx.room.Room
 import com.app.uniqueplant.data.datasource.local.AppDatabase
+import com.app.uniqueplant.data.datasource.local.DatabaseCallback
 import com.app.uniqueplant.data.datasource.local.dao.CategoryDao
+import com.app.uniqueplant.data.datasource.local.dao.CategoryTypeDao
 import com.app.uniqueplant.data.datasource.local.dao.ExpenseDao
 import com.app.uniqueplant.data.datasource.local.dao.IncomeDao
 import com.app.uniqueplant.data.datasource.local.dao.PersonDao
+import com.app.uniqueplant.data.datasource.local.dao.RequiredFieldDao
+import com.app.uniqueplant.data.datasource.local.dao.TransactionFieldValueDao
+import com.app.uniqueplant.data.datasource.local.dao.UnitTypeDao
 import com.app.uniqueplant.data.datasource.local.dao.UserDao
 import com.app.uniqueplant.data.datasource.preferences.SharedPreferencesRepository
 import com.app.uniqueplant.data.repository.CategoryRepositoryImpl
@@ -45,7 +50,8 @@ object RoomModule {
     @Provides
     @Singleton
     fun provideAppDatabase(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
+        callback: DatabaseCallback
     ): AppDatabase {
         return Room
             .databaseBuilder(
@@ -54,6 +60,7 @@ object RoomModule {
                 "unique-plant-database"
             )
             .fallbackToDestructiveMigration(true)
+            .addCallback(callback)
             .build()
     }
 
@@ -80,6 +87,26 @@ object RoomModule {
     @Provides
     fun providePersonDao(database: AppDatabase): PersonDao {
         return database.personDao()
+    }
+
+    @Provides
+    fun provideCategoryTypeDao(database: AppDatabase): CategoryTypeDao {
+        return database.categoryTypeDao()
+    }
+
+    @Provides
+    fun provideUnitTypeDao(database: AppDatabase): UnitTypeDao {
+        return database.unitTypeDao()
+    }
+
+    @Provides
+    fun provideRequiredFieldDao(database: AppDatabase): RequiredFieldDao {
+        return database.requiredFieldDao()
+    }
+
+    @Provides
+    fun provideTransactionFieldValueDao(database: AppDatabase): TransactionFieldValueDao {
+        return database.transactionFieldValueDao()
     }
 
     @Provides
@@ -113,11 +140,8 @@ object RoomModule {
     }
 
     @Provides
-    fun provideLoadDefaultsUseCase(
-        categoryRepository: CategoryRepository,
-        preferencesRepository: SharedPreferencesRepository
-    ): LoadDefaultsUseCase {
-        return LoadDefaultsUseCase(categoryRepository, preferencesRepository)
+    fun provideLoadDefaultsUseCase(): LoadDefaultsUseCase {
+        return LoadDefaultsUseCase()
     }
 
     @Provides

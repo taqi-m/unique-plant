@@ -27,7 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.app.uniqueplant.data.model.Category
+import com.app.uniqueplant.data.datasource.local.entities.Category
 import com.app.uniqueplant.domain.model.TransactionType
 import com.app.uniqueplant.ui.components.buttons.AddNewButton
 import com.app.uniqueplant.ui.components.cards.CategoryItem

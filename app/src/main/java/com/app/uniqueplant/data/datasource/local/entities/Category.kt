@@ -1,14 +1,13 @@
-package com.app.uniqueplant.data.model
+package com.app.uniqueplant.data.datasource.local.entities
 
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity(
     tableName = "categories",
-    indices = [Index("categoryId")],
+    indices = [Index("categoryId"),Index(value = ["categoryTypeId"])],
 )
 data class Category(
     @PrimaryKey(autoGenerate = true)
@@ -19,6 +18,7 @@ data class Category(
     val icon: String? = null,
     val description: String? = null,
     val expectedPersonType: String? = null,
-    val createdAt: Date = Date(),
-    val updatedAt: Date = Date()
+    val categoryTypeId: Int? = null,
+    val createdAt: Long = System.currentTimeMillis(),
+    val updatedAt: Long = System.currentTimeMillis()
 )

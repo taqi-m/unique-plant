@@ -1,7 +1,7 @@
 package com.app.uniqueplant.data.repository
 
 import com.app.uniqueplant.data.datasource.local.dao.IncomeDao
-import com.app.uniqueplant.data.model.Income
+import com.app.uniqueplant.data.datasource.local.entities.Income
 import com.app.uniqueplant.domain.repository.IncomeRepository
 import kotlinx.coroutines.flow.Flow
 import java.util.Calendar

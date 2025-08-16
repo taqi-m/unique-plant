@@ -1,4 +1,4 @@
-package com.app.uniqueplant.data.model
+package com.app.uniqueplant.data.datasource.local.entities
 
 enum class PersonTypes {
     CUSTOMER,

@@ -1,7 +1,7 @@
 package com.app.uniqueplant.domain.usecase.person
 
 import com.app.uniqueplant.data.datasource.local.dao.PersonDao
-import com.app.uniqueplant.data.model.Person
+import com.app.uniqueplant.data.datasource.local.entities.Person
 import com.app.uniqueplant.presentation.admin.categories.UiState
 
 class AddPersonUseCase(

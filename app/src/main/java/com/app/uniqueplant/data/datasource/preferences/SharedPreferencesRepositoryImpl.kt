@@ -66,6 +66,10 @@ class SharedPreferencesRepositoryImpl @Inject constructor(
         sharedPreferences.edit { clear() }
     }
 
+    override fun putBoolean(key: String, bool: Boolean) {
+        sharedPreferences.edit { putBoolean(key, bool) }
+    }
+
     override fun contains(key: String): Boolean {
         return sharedPreferences.contains(key)
     }

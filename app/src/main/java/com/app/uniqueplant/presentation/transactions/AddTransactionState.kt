@@ -1,6 +1,6 @@
 package com.app.uniqueplant.presentation.transactions
 
-import com.app.uniqueplant.data.model.Category
+import com.app.uniqueplant.data.datasource.local.entities.Category
 import com.app.uniqueplant.domain.model.InputField
 import com.app.uniqueplant.domain.model.TransactionType
 import java.util.Date

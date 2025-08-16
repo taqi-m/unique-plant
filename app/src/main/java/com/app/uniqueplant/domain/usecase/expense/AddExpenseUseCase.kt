@@ -1,7 +1,7 @@
 package com.app.uniqueplant.domain.usecase.expense
 
 import android.util.Log
-import com.app.uniqueplant.data.model.Expense
+import com.app.uniqueplant.data.datasource.local.entities.Expense
 import com.app.uniqueplant.domain.repository.ExpenseRepository
 import com.app.uniqueplant.domain.usecase.auth.SessionUseCase
 import java.util.Date
