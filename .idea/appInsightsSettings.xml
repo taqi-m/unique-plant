@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.app.uniqueplant" />
-                  <option name="mobileSdkAppId" value="1:1023948137462:android:11bdd1fc59e3a53fc21dd7" />
-                  <option name="projectId" value="unique-plant" />
-                  <option name="projectNumber" value="1023948137462" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
