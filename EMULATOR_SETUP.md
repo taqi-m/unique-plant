@@ -41,18 +41,18 @@ firebase init emulators
 ```json
 {
   "firestore": {
-    "rules": "firestore.rules. dev"
+    "rules": "firestore.rules.dev"
   },
   "emulators": {
     "auth": { "port": 9099, "host": "0.0.0.0" },
-    "firestore": { "port": 8080, "host": "0.0. 0.0" },
-    "functions": { "port": 5001, "host": "0.0. 0.0" },
-    "ui": { "enabled": true, "port": 4000, "host": "0.0. 0.0" }
+    "firestore": { "port": 8080, "host": "0.0.0.0" },
+    "functions": { "port": 5001, "host": "0.0.0.0" },
+    "ui": { "enabled": true, "port": 4000, "host": "0.0.0.0" }
   }
 }
 ```
 
-**`firestore.rules. dev`** - Permissive rules for development:
+**`firestore.rules.dev`** - Permissive rules for development:
 
 ```javascript
 rules_version = '2';
@@ -75,7 +75,7 @@ The app is already configured with `dev` and `prod` flavors:
 - **`prod`** → Uses Cloud Firebase
 
 **Key files (already in repo):**
-- `app/build.gradle. kts` - Build variants with emulator config
+- `app/build.gradle.kts` - Build variants with emulator config
 - `app/src/dev/AndroidManifest.xml` - Cleartext traffic allowed
 - `app/src/dev/res/xml/network_security_config.xml` - Network security config
 - `app/src/main/java/com/fiscal/compass/di/FirebaseModule.kt` - Emulator connection logic
@@ -85,7 +85,7 @@ The app is already configured with `dev` and `prod` flavors:
 Add dev package to your Firebase project:
 
 1.  Firebase Console → Project Settings → Add Android App
-2. Package name: `com.fiscal.compass. dev`
+2. Package name: `com.fiscal.compass.dev`
 3. Download updated `google-services.json` (contains both prod and dev)
 4. Replace `app/google-services.json`
 
@@ -142,7 +142,7 @@ exports.getUserStats = functions.https.onCall(async (data, context) => {
 
   const expenses = await admin.firestore()
     .collection('users')
-    .doc(context. auth.uid)
+    .doc(context.auth.uid)
     .collection('expenses')
     .get();
 
@@ -223,14 +223,14 @@ adb reverse tcp:9099 tcp:9099 && adb reverse tcp:8080 tcp:8080
 ./gradlew installProdRelease
 
 # Clear emulator data
-rm -rf . firebase/ emulator-data/
+rm -rf .firebase/ emulator-data/
 ```
 
 ---
 
 ## 📚 Resources
 
-- [Firebase Emulator Suite Docs](https://firebase.google. com/docs/emulator-suite)
+- [Firebase Emulator Suite Docs](https://firebase.google.com/docs/emulator-suite)
 - [Connect Android to Emulators](https://firebase.google.com/docs/emulator-suite/connect_and_prototype)
 
 ---
