@@ -1,10 +1,12 @@
 package com.fiscal.compass.presentation.screens.transactionScreens.addTransaction
 
 import com.fiscal.compass.presentation.model.TransactionType
+import com.fiscal.compass.presentation.utils.AmountInputType
 import java.util.Calendar
 
 sealed class AddTransactionEvent {
-    data class OnAmountChange(val amount: String) : AddTransactionEvent()
+    data class OnAmountChange(val amount: String, val inputType: AmountInputType = AmountInputType.TOTAL_AMOUNT) : AddTransactionEvent()
+    data class OnAmountPaidChange(val amountPaid: String) : AddTransactionEvent()
     data class OnDescriptionChange(val description: String) : AddTransactionEvent()
 
     data class OnPersonSelected(val personId: Long?) : AddTransactionEvent()
